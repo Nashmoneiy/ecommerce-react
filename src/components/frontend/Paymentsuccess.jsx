@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import { useState } from "react";
-import AxiosInstance from "./AxiosInstance";
+import AxiosInstance from "../../AxiosInstance";
 
 const PaymentSuccess = () => {
   const [params] = useSearchParams();

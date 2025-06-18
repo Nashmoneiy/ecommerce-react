@@ -7,7 +7,7 @@ import Footer from "../../layouts/admin/Footer";
 import { Link } from "react-router-dom";
 import mobile from "../images/mobile.jpg";
 import Checkout from "./Checkout";
-import AxiosInstance from "./AxiosInstance";
+import AxiosInstance from "../../AxiosInstance";
 
 const Collections = () => {
   const [category, setCategory] = useState([]);

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
-import AxiosInstance from "./AxiosInstance";
+import AxiosInstance from "../../../AxiosInstance";
 
 const Editproduct = () => {
   const navigate = useNavigate();

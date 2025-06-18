@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
-import AxiosInstance from "./AxiosInstance";
+import AxiosInstance from "../../../AxiosInstance";
 
 const Category = () => {
   const [alert, setAlert] = useState({ show: false, type: "", message: "" });

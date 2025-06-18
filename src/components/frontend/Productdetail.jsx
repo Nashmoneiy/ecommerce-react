@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import alertify from "alertifyjs";
 import { useCart } from "../../CartContext";
-import AxiosInstance from "./AxiosInstance";
+import AxiosInstance from "../../AxiosInstance";
 const Productdetail = () => {
   const { updateCartCount } = useCart();
   const [cart, setCart] = useState([]);
