@@ -86,14 +86,12 @@ function App() {
               </Route>
 
               <Route path="/admin/add-category" element={<Category />} />
-              <Route path="/admin/view-category">
-                <Route path="/admin/view-category" element={<Viewcategory />} />
-                <Route
-                  exact
-                  path="/admin/view-category/edit/:id"
-                  element={<Editcategory />}
-                />
-              </Route>
+              <Route path="/admin/view-category" element={<Viewcategory />} />
+              <Route
+                path="/admin/view-category/edit/:id"
+                element={<Editcategory />}
+              />
+
               <Route path="/admin/add-product" element={<Product />} />
               <Route path="/admin/view-products">
                 <Route path="/admin/view-products" element={<Viewproduct />} />
