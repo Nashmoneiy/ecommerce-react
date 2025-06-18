@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useCart } from "../../CartContext";
-import AxiosInstance from "../../axiosInstance";
+import axiosInstance from "../../AxiosInstance";
+axiosInstance;
 
 function Navbar() {
   const { cartCount } = useCart();
