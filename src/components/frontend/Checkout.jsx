@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-axiosInstance;
+
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../../AxiosInstance";
+import AxiosInstance from "./AxiosInstance";
 
 const Checkout = () => {
   const navigate = useNavigate();

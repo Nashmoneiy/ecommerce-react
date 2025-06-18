@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
-axiosInstance;
+
 import { Link } from "react-router-dom";
 //import axios from "axios";
 
 import { useParams } from "react-router-dom";
-import axiosInstance from "../../../AxiosInstance";
+import AxiosInstance from "./AxiosInstance";
 
 const Editcategory = () => {
   const { id } = useParams();

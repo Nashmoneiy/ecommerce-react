@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-axiosInstance;
 import { useNavigate } from "react-router-dom";
 import Orderdetails from "./Orderdetails";
-import axiosInstance from "../../AxiosInstance";
+import AxiosInstance from "./AxiosInstance";
 
 function Profiles() {
   const [orders, setOrders] = useState([]);

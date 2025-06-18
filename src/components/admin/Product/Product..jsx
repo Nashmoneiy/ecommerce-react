@@ -1,8 +1,8 @@
 import React from "react";
-axiosInstance;
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axiosInstance from "../../../AxiosInstance";
+import AxiosInstance from "./AxiosInstance";
 
 const Product = () => {
   const [alert, setAlert] = useState({ show: false, type: "", message: "" });

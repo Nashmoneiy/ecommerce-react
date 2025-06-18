@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useCart } from "../../CartContext";
-import axiosInstance from "../../AxiosInstance";
-axiosInstance;
+import AxiosInstance from "./AxiosInstance";
 
 function Navbar() {
   const { cartCount } = useCart();

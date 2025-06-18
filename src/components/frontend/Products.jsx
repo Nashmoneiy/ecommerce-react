@@ -1,8 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import axiosInstance from "../../AxiosInstance";
-axiosInstance;
+import AxiosInstance from "./AxiosInstance";
 
 const Products = () => {
   const [loading, setLoading] = useState(true);

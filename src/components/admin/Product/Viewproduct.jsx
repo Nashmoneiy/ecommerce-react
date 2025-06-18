@@ -1,9 +1,7 @@
 import React from "react";
-axiosInstance;
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axiosInstance from "../../../AxiosInstance";
-axiosInstance;
+import AxiosInstance from "./AxiosInstance";
 
 const Viewproduct = () => {
   const [product, setProduct] = useState([]);

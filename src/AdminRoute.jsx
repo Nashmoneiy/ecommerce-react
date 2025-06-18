@@ -10,11 +10,14 @@ const AdminRoute = ({ children }) => {
       const token = localStorage.getItem("auth_token");
 
       try {
-        const response = await axios.get("http://localhost:8000/api/auth", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          "https://laravel-api-production-1878.up.railway.app/api/auth",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
         if (response.status === 200 && response.data.role === "user") {
           setIsAuth(false);

@@ -1,13 +1,13 @@
 import React from "react";
 import Navbar from "../../layouts/frontend/Navbar";
-axiosInstance;
+
 import { useEffect, useState } from "react";
 import Master from "../../layouts/frontend/Master";
 import Footer from "../../layouts/admin/Footer";
 import { Link } from "react-router-dom";
 import mobile from "../images/mobile.jpg";
 import Checkout from "./Checkout";
-import axiosInstance from "../../AxiosInstance";
+import AxiosInstance from "./AxiosInstance";
 
 const Collections = () => {
   const [category, setCategory] = useState([]);
