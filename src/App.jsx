@@ -11,7 +11,6 @@ import "alertifyjs/build/css/themes/default.min.css";
 import Dashboard from "./components/admin/Dashboard";
 import Profiles from "./components/admin/Profiles";
 import Home from "./components/frontend/Home";
-import About from "./components/frontend/About";
 import Login from "./components/frontend/auth/Login";
 import Register from "./components/frontend/auth/Register";
 import Category from "./components/admin/category/Category";
@@ -30,7 +29,7 @@ import Cart from "./components/frontend/Cart";
 import Checkout from "./components/frontend/Checkout";
 import { CartProvider } from "./CartContext";
 import Paymentsuccess from "./components/frontend/Paymentsuccess";
-import ViewOrder from "./components/frontend/Vieworder";
+//import ViewOrder from "./components/frontend/Vieworder";
 import Vieworder from "./components/frontend/Vieworder";
 import Orderdetails from "./components/admin/Orderdetails";
 function App() {
