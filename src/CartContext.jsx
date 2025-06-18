@@ -1,6 +1,7 @@
 // src/contexts/CartContext.js
 import React, { createContext, useContext, useState, useEffect } from "react";
-import AxiosInstance from "./axiosInstance";
+import axiosInstance from "./AxiosInstance";
+axiosInstance;
 
 const CartContext = createContext();
 
