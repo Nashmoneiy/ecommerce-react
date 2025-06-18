@@ -32,7 +32,7 @@ const Collections = () => {
   });
 
   if (loading) {
-    return <p>Loading category details...</p>;
+    return <p className="m-3">Loading category details...</p>;
   } else {
     var displayCategory = [];
     if (category.length > 0) {
@@ -42,8 +42,8 @@ const Collections = () => {
             <div className="card m-2">
               <Link to={`/collections/${item.slug}`}>
                 <img
-                  src={`http://localhost:8000/${item.image}`}
-                  className="w-100"
+                  src={`https://laravel-api-production-1878.up.railway.app/${item.image}`}
+                  className="product-image"
                 />
               </Link>
               <div className="card-body">

@@ -139,7 +139,7 @@ const Cart = () => {
           <tr key={id}>
             <td width="10%" className="text-center ">
               <img
-                src={`http://localhost:8000/${item.product_image}`}
+                src={`https://laravel-api-production-1878.up.railway.app/${item.product_image}`}
                 width="80px"
                 height="55px"
                 className="border-3"

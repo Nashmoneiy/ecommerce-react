@@ -30,7 +30,10 @@ function Register() {
     };
 
     axios
-      .post(`http://localhost:8000/api/register`, data)
+      .post(
+        `https://laravel-api-production-1878.up.railway.app/api/register`,
+        data
+      )
       .then((res) => {
         /* localStorage.setItem(
           "auth_token",

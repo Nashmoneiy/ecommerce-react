@@ -40,7 +40,7 @@ const Viewproduct = () => {
           </td>
           <td>
             <img
-              src={`http://localhost:8000/${item.image}`}
+              src={`https://laravel-api-production-1878.up.railway.app/${item.image}`}
               width="50px"
               height="50px"
               alt="image"
