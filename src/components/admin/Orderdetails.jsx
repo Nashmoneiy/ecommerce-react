@@ -3,7 +3,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import AxiosInstance from "../../axiosInstance";
+import axiosInstance from "../../AxiosInstance";
+axiosInstance;
 
 function Orderdetails({ orderId }) {
   console.log(orderId);

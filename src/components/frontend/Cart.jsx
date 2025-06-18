@@ -1,10 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import AxiosInstance from "../../axiosInstance";
+axiosInstance;
 import alertify from "alertifyjs";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../CartContext";
+import axiosInstance from "../../AxiosInstance";
 
 const Cart = () => {
   const { updateCartCount } = useCart();

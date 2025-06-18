@@ -1,7 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import AxiosInstance from "../../../axiosInstance";
+axiosInstance;
 import { Link } from "react-router-dom";
+import axiosInstance from "../../../AxiosInstance";
 
 function viewcategory() {
   const [alert, setAlert] = useState({ show: false, type: "", message: "" });
