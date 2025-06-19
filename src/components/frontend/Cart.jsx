@@ -179,7 +179,7 @@ const Cart = () => {
                 ${(item.product_price * item.product_quantity).toFixed(2)}
               </h6>
             </td>
-            <td width="10%" className="text-center">
+            <td width="8%" className="text-center">
               <button
                 className="remove-cart"
                 onClick={(e) => deleteCartItem(e, item.id)}
