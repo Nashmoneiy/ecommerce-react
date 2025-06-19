@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-
 import Navbar from "../../../layouts/frontend/Navbar";
 import axios from "axios";
-
 import swal from "sweetalert";
-
 import { useNavigate } from "react-router-dom";
 import Footer from "../../../layouts/admin/Footer";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // 👁️ import icons
 
 function Register() {
   const navigate = useNavigate();
@@ -16,10 +14,18 @@ function Register() {
     email: "",
     password: "",
   });
+
+  const [showPassword, setShowPassword] = useState(false); // 👁️ control visibility
+
   const handleInput = (e) => {
     e.persist();
     setRegister({ ...registerInput, [e.target.name]: e.target.value });
   };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+  };
+
   const registerSubmit = (e) => {
     e.preventDefault();
 
@@ -35,17 +41,8 @@ function Register() {
         data
       )
       .then((res) => {
-        /* localStorage.setItem(
-          "auth_token",
-          JSON.stringify({
-            token: res.data.token,
-            name: res.data.name,
-          })
-        );*/
-
-        swal("success", res.data.message, "success");
+        swal("Success", res.data.message, "success");
         navigate("/");
-        console.log(res.data.message);
       })
       .catch(function (error) {
         if (error.response) {
@@ -53,6 +50,7 @@ function Register() {
         }
       });
   };
+
   return (
     <div className="d-flex flex-column min-vh-100">
       <Navbar />
@@ -76,6 +74,7 @@ function Register() {
                     />
                     <span className="text-danger">{InputErrorList.name}</span>
                   </div>
+
                   <div className="mb-3">
                     <label className="form-label">Email address</label>
                     <input
@@ -87,21 +86,31 @@ function Register() {
                     />
                     <span className="text-danger">{InputErrorList.email}</span>
                   </div>
+
                   <div className="mb-3">
                     <label className="form-label">Password</label>
-                    <input
-                      type="password"
-                      name="password"
-                      onChange={handleInput}
-                      value={registerInput.password}
-                      className="form-control"
-                    />
+                    <div className="input-group">
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        name="password"
+                        onChange={handleInput}
+                        value={registerInput.password}
+                        className="form-control"
+                      />
+                      <span
+                        className="input-group-text"
+                        style={{ cursor: "pointer" }}
+                        onClick={togglePasswordVisibility}
+                      >
+                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                      </span>
+                    </div>
                     <span className="text-danger">
                       {InputErrorList.password}
                     </span>
                   </div>
 
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" className="btn btn-dark w-100">
                     Submit
                   </button>
                 </form>
