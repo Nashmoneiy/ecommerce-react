@@ -196,12 +196,14 @@ const Checkout = () => {
       let formattedPrice = totalPrice.toFixed(2);
       return (
         <tr key={item.id}>
-          <td width="10%" className="text-center ">
+          <td width="30%">
             <img
-              src={`https://laravel-api-production-1d4a.up.railway.app//${item.product_image}`}
-              width="80px"
-              height="55px"
-              className="border-3"
+              src={`https://laravel-api-production-1d4a.up.railway.app/${item.product_image.replace(
+                /^\/+/,
+                ""
+              )}`}
+              className="w-50"
+              alt="product"
             />
           </td>
           <td>{item.product_name}</td>
