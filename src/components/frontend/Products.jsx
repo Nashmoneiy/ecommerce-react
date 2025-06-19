@@ -36,12 +36,16 @@ const Products = () => {
     if (productCount) {
       displayProduct = product.map((item) => {
         return (
-          <div className="row col-md-6 productimage" key={item.id}>
-            <div className="card m-5">
+          <div
+            className="col-sm-6 col-md-4 d-flex justify-content-center mb-4"
+            key={item.id}
+          >
+            <div className="card w-100">
               <Link to={`/collections/${item.categories.slug}/${item.slug}`}>
                 <img
                   src={`https://laravel-api-production-1d4a.up.railway.app/${item.image}`}
-                  className="product-image"
+                  className="card-img-top"
+                  alt={item.name}
                 />
               </Link>
               <div className="card-body">
@@ -51,7 +55,7 @@ const Products = () => {
                 >
                   <h5>{item.name}</h5>
                 </Link>
-                <span className="textx">{item.description}</span>
+                <p className="text-muted">{item.description}</p>
               </div>
               <span className="p-3">⭐⭐⭐</span>
             </div>
