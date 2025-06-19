@@ -20,6 +20,11 @@ function Register() {
   const handleInput = (e) => {
     e.persist();
     setRegister({ ...registerInput, [e.target.name]: e.target.value });
+    setInputErrorList({
+      email: "",
+      password: "",
+      name: "",
+    });
   };
 
   const togglePasswordVisibility = () => {
