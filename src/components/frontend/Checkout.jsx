@@ -198,7 +198,7 @@ const Checkout = () => {
         <tr key={item.id}>
           <td width="40%">
             <img
-              src={`https://laravel-api-production-1d4a.up.railway.app/${item.product_image}`}
+              src={`https://laravel-api-production-1d4a.up.railway.app${item.product_image}`}
               className="w-50"
             />
           </td>
