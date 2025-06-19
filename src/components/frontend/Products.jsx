@@ -7,7 +7,6 @@ const Products = () => {
   const [product, setProduct] = useState([]);
   const [category, setCategory] = useState([]);
   const { slug } = useParams();
-  const productCount = product.length;
 
   useEffect(() => {
     AxiosInstance.get(`/api/collections/${slug}`)
@@ -18,9 +17,7 @@ const Products = () => {
           setCategory(response.data.category);
         }
       })
-      .catch((error) => {
-        // Handle error
-      });
+      .catch((error) => {});
   }, [slug]);
 
   if (loading) {
@@ -33,28 +30,28 @@ const Products = () => {
 
   let displayProduct = [];
 
-  if (productCount) {
+  if (product.length) {
     displayProduct = product.map((item) => (
-      <div className="col-6 col-sm-6 mb-4" key={item.id}>
-        <div className="card h-100">
+      <div className="col-6 mb-3 px-2" key={item.id}>
+        <div className="card">
           <Link to={`/collections/${item.categories.slug}/${item.slug}`}>
             <img
               src={`https://laravel-api-production-1d4a.up.railway.app/${item.image}`}
               className="card-img-top"
               alt={item.name}
-              style={{ objectFit: "cover", height: "250px" }}
+              style={{ height: "180px", objectFit: "cover" }}
             />
           </Link>
-          <div className="card-body">
+          <div className="card-body p-2">
             <Link
-              className="name"
+              className="name text-decoration-none text-dark"
               to={`/collections/${item.categories.slug}/${item.slug}`}
             >
-              <h5>{item.name}</h5>
+              <h6 className="mb-1">{item.name}</h6>
             </Link>
-            <p className="text-muted">{item.description}</p>
+            <p className="text-muted small">{item.description}</p>
+            <span className="small">⭐⭐⭐</span>
           </div>
-          <span className="p-3">⭐⭐⭐</span>
         </div>
       </div>
     ));
@@ -77,9 +74,9 @@ const Products = () => {
           <h4>Products</h4>
         </div>
       </div>
-      <div className="py-4 displayProduct">
+      <div className="py-4">
         <div className="container">
-          <div className="row justify-content-center">{displayProduct}</div>
+          <div className="row">{displayProduct}</div>
         </div>
       </div>
     </div>
