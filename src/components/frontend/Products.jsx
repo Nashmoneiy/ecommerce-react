@@ -37,10 +37,10 @@ const Products = () => {
       displayProduct = product.map((item) => {
         return (
           <div
-            className="col-sm-6 col-md-4 d-flex justify-content-center mb-4"
+            className="col-sm-6 col-md-6 d-flex justify-content-center mb-4"
             key={item.id}
           >
-            <div className="card w-100 m-5">
+            <div className="card w-100 m-3">
               <Link to={`/collections/${item.categories.slug}/${item.slug}`}>
                 <img
                   src={`https://laravel-api-production-1d4a.up.railway.app/${item.image}`}
