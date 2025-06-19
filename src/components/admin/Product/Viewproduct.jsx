@@ -34,7 +34,7 @@ const Viewproduct = () => {
       return (
         <tr key={item.id}>
           <td>{item.name}</td>
-          <td>{item.category.name}</td>
+          <td>{item.categories.name}</td>
           <td>{item.selling_price}</td>
           <td>
             <div>{item.status === 1 ? <p>visible</p> : <p>hidden</p>}</div>
