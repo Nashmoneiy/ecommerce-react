@@ -37,7 +37,7 @@ const Products = () => {
       displayProduct = product.map((item) => {
         return (
           <div className="row col-md-6 productimage" key={item.id}>
-            <div className="card m-4">
+            <div className="card m-3">
               <Link to={`/collections/${item.categories.slug}/${item.slug}`}>
                 <img
                   src={`https://laravel-api-production-1878.up.railway.app/${item.image}`}
