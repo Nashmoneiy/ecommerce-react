@@ -6,8 +6,8 @@ const Footer = () => {
       <div className="container-fluid px-4">
         <div className="d-flex align-items-center justify-content-between small">
           <div className="text-white">Copyright &copy; Eucia 2025</div>
-          <div>
-            <a href="#" className="text-white text-decoration-none">
+          <div className="m-2">
+            <a href="#" className="text-white text-decoration-none m-1">
               Privacy Policy
             </a>
             &nbsp;&middot;&nbsp;
