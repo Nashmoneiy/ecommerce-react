@@ -1,13 +1,10 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Navbar from "../../../layouts/frontend/Navbar";
-
 import axios from "axios";
-
 import swal from "sweetalert";
-
 import { useNavigate } from "react-router-dom";
 import Footer from "../../../layouts/admin/Footer";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // import icons
 
 function Login() {
   const navigate = useNavigate();
@@ -17,9 +14,15 @@ function Login() {
     password: "",
   });
 
+  const [showPassword, setShowPassword] = useState(false); // toggle password visibility
+
   const handleInput = (e) => {
     e.persist();
     setLogin({ ...loginInput, [e.target.name]: e.target.value });
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState);
   };
 
   const loginSubmit = (e) => {
@@ -78,21 +81,31 @@ function Login() {
                     />
                     <span className="text-danger">{InputErrorList.email}</span>
                   </div>
-                  <div className="mb-3">
+
+                  <div className="mb-3 position-relative">
                     <label>Password</label>
-                    <input
-                      type="password"
-                      name="password"
-                      onChange={handleInput}
-                      value={loginInput.password}
-                      className="form-control"
-                    />
+                    <div className="input-group">
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        name="password"
+                        onChange={handleInput}
+                        value={loginInput.password}
+                        className="form-control"
+                      />
+                      <span
+                        className="input-group-text"
+                        style={{ cursor: "pointer" }}
+                        onClick={togglePasswordVisibility}
+                      >
+                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                      </span>
+                    </div>
                     <span className="text-danger">
                       {InputErrorList.password}
                     </span>
                   </div>
 
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" className="btn btn-primary w-100">
                     Submit
                   </button>
                 </form>
