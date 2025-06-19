@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import AxiosInstance from "../../AxiosInstance";
 
@@ -19,9 +18,8 @@ const Products = () => {
           setCategory(response.data.category);
         }
       })
-
       .catch((error) => {
-        // console.log(slug);
+        // Handle error
       });
   }, [slug]);
 
@@ -31,48 +29,45 @@ const Products = () => {
         <h5>Loading products...</h5>
       </div>
     );
-  } else {
-    var displayProduct = [];
-    if (productCount) {
-      displayProduct = product.map((item) => {
-        return (
-          <div
-            className="col-sm-6 col-md-6 d-flex justify-content-center mb-4"
-            key={item.id}
-          >
-            <div className="card w-100 m-3">
-              <Link to={`/collections/${item.categories.slug}/${item.slug}`}>
-                <img
-                  src={`https://laravel-api-production-1d4a.up.railway.app/${item.image}`}
-                  className="card-img-top"
-                  alt={item.name}
-                />
-              </Link>
-              <div className="card-body">
-                <Link
-                  className="name"
-                  to={`/collections/${item.categories.slug}/${item.slug}`}
-                >
-                  <h5>{item.name}</h5>
-                </Link>
-                <p className="text-muted">{item.description}</p>
-              </div>
-              <span className="p-3">⭐⭐⭐</span>
-            </div>
+  }
+
+  let displayProduct = [];
+
+  if (productCount) {
+    displayProduct = product.map((item) => (
+      <div className="col-12 col-sm-6 mb-4" key={item.id}>
+        <div className="card h-100">
+          <Link to={`/collections/${item.categories.slug}/${item.slug}`}>
+            <img
+              src={`https://laravel-api-production-1d4a.up.railway.app/${item.image}`}
+              className="card-img-top"
+              alt={item.name}
+              style={{ objectFit: "cover", height: "250px" }}
+            />
+          </Link>
+          <div className="card-body">
+            <Link
+              className="name"
+              to={`/collections/${item.categories.slug}/${item.slug}`}
+            >
+              <h5>{item.name}</h5>
+            </Link>
+            <p className="text-muted">{item.description}</p>
           </div>
-        );
-      });
-    } else {
-      displayProduct = (
-        <div className="container">
-          <div className="card">
-            <div className="card-body">
-              <h5>no product available for this category</h5>
-            </div>
+          <span className="p-3">⭐⭐⭐</span>
+        </div>
+      </div>
+    ));
+  } else {
+    displayProduct = (
+      <div className="container">
+        <div className="card">
+          <div className="card-body">
+            <h5>No product available for this category</h5>
           </div>
         </div>
-      );
-    }
+      </div>
+    );
   }
 
   return (
@@ -84,9 +79,7 @@ const Products = () => {
       </div>
       <div className="py-4 displayProduct">
         <div className="container">
-          <div className="d-flex flex-wrap justify-content-align gap-2">
-            {displayProduct}
-          </div>
+          <div className="row justify-content-center">{displayProduct}</div>
         </div>
       </div>
     </div>
