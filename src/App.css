@@ -47,7 +47,7 @@ body {
         color: red;
         text-decoration: none;
         border: none;
-        margin-left: -11%;
+        margin-left: -13%;
       
       }
        .name{
@@ -87,7 +87,7 @@ body {
       @media only screen and (max-width: 700px) {
     .remove-cart{
       position: absolute;
-      left: 88%;
+      left: 85%;
       margin-top: 85px;
       font-weight: bold;
       

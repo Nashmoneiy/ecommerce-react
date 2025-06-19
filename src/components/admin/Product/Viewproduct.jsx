@@ -16,9 +16,10 @@ const Viewproduct = () => {
           setLoading(false);
         }
       })
-
-      .catch((error) => {});
-  });
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+      });
+  }, []); // ✅ run only once when component mounts
 
   var productData = [];
   if (loading) {
@@ -43,7 +44,6 @@ const Viewproduct = () => {
               src={`https://laravel-api-production-1878.up.railway.app/${item.image}`}
               width="50px"
               height="50px"
-              alt="image"
             />
           </td>
           <td className="p-2">
