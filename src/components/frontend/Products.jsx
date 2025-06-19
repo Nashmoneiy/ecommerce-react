@@ -39,7 +39,7 @@ const Products = () => {
               src={`https://laravel-api-production-1d4a.up.railway.app/${item.image}`}
               className="card-img-top"
               alt={item.name}
-              style={{ height: "180px", objectFit: "cover" }}
+              style={{ height: "180px", objectFit: "contain" }}
             />
           </Link>
           <div className="card-body p-2">
