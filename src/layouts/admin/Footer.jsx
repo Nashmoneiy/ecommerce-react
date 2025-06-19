@@ -2,21 +2,44 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="py-4 bg-dark mt-auto footer text-white">
-      <div className="container-fluid px-4">
-        <div className="d-flex align-items-center justify-content-between small">
-          <div className="text-white">Copyright &copy; Eucia 2025</div>
-          <div className="m-2">
-            <a href="#" className="text-white text-decoration-none m-1">
+    <footer className="bg-dark text-white py-4 mt-auto">
+      <div className="container">
+        <div className="row align-items-center text-center text-md-start">
+          <div className="col-md-6 mb-3 mb-md-0">
+            <p className="mb-0">
+              &copy; {new Date().getFullYear()} Eucia. All rights reserved.
+            </p>
+          </div>
+          <div className="col-md-6 d-flex justify-content-center justify-content-md-end flex-wrap gap-3">
+            <a
+              href="#"
+              className="text-white text-decoration-none small footer-link"
+            >
               Privacy Policy
             </a>
-            &nbsp;&middot;&nbsp;
-            <a href="#" className="text-white text-decoration-none m-2">
+            <a
+              href="#"
+              className="text-white text-decoration-none small footer-link"
+            >
               Terms &amp; Conditions
+            </a>
+            <a
+              href="#"
+              className="text-white text-decoration-none small footer-link"
+            >
+              Contact Us
             </a>
           </div>
         </div>
       </div>
+
+      {/* Optional styling for hover effect */}
+      <style>{`
+        .footer-link:hover {
+          text-decoration: underline;
+          color: #f8f9fa;
+        }
+      `}</style>
     </footer>
   );
 };
