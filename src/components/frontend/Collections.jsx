@@ -43,7 +43,7 @@ const Collections = () => {
             <div className="card m-2">
               <Link to={`/collections/${item.slug}`}>
                 <img
-                  src={`https://laravel-api-production-1878.up.railway.app/${item.image}`}
+                  src={`https://laravel-api-production-1d4a.up.railway.app/${item.image}`}
                   className="product-image"
                 />
               </Link>

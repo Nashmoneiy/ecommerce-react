@@ -279,7 +279,7 @@ const Editproduct = () => {
                     onChange={handleImage}
                   />
                   <img
-                    src={`https://laravel-api-production-1878.up.railway.app/${ProductInput.image}`}
+                    src={`https://laravel-api-production-1d4a.up.railway.app/${ProductInput.image}`}
                     width="50px"
                   />
 

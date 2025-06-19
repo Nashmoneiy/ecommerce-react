@@ -40,7 +40,7 @@ const Products = () => {
             <div className="card m-5">
               <Link to={`/collections/${item.categories.slug}/${item.slug}`}>
                 <img
-                  src={`https://laravel-api-production-1878.up.railway.app/${item.image}`}
+                  src={`https://laravel-api-production-1d4a.up.railway.app/${item.image}`}
                   className="product-image"
                 />
               </Link>
