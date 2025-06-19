@@ -35,7 +35,7 @@ const Products = () => {
 
   if (productCount) {
     displayProduct = product.map((item) => (
-      <div className="col-12 col-sm-6 mb-4" key={item.id}>
+      <div className="col-6 col-sm-6 mb-4" key={item.id}>
         <div className="card h-100">
           <Link to={`/collections/${item.categories.slug}/${item.slug}`}>
             <img
