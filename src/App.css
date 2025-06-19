@@ -98,7 +98,11 @@ body {
     }
     .productimage {
       width: 45%;
-      margin: 15px;
+
+      background-color: red;
+      position: relative;
+      margin-left: 10%;
+
       
     }
     .offer{
