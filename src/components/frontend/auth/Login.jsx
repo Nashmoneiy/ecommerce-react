@@ -32,7 +32,7 @@ function Login() {
 
     axios
       .post(
-        `https://laravel-api-production-1d4a.up.railway.app//api/login`,
+        `https://laravel-api-production-1d4a.up.railway.app/api/login`,
         data
       )
       .then((res) => {

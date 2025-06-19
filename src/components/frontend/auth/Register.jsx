@@ -31,7 +31,7 @@ function Register() {
 
     axios
       .post(
-        `https://laravel-api-production-1d4a.up.railway.app//api/register`,
+        `https://laravel-api-production-1d4a.up.railway.app/api/register`,
         data
       )
       .then((res) => {
