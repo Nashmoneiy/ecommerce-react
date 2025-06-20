@@ -147,10 +147,10 @@ const Cart = () => {
               />
             </td>
             <td width="10%" className="text-center">
-              <h6>${item.product_name}</h6>
+              <p>{item.product_name}</p>
             </td>
             <td width="10%" className="text-center">
-              <h6>${item.product_price}</h6>
+              <p>${item.product_price}</p>
             </td>
             <td width="5%">
               <div className="input-group">
