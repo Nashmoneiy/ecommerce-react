@@ -254,10 +254,10 @@ const Cart = () => {
         <div className="col-md-8"></div>
         <div className="col-md-4">
           <div className="card card-body mt-3">
-            <h5>
+            <h6>
               Total:
-              <span className="float-end">{formattedPrice}</span>
-            </h5>
+              <p className="float-end">{formattedPrice}</p>
+            </h6>
             <hr />
             <div className="d-flex">
               <Link to="/checkout" className="btn btn-success ms-auto">
