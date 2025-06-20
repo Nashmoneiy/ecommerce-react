@@ -153,7 +153,13 @@ const Cart = () => {
               <h6>${item.product_price}</h6>
             </td>
             <td>
-              <div className="d-flex align-items-center justify-content-start gap-2 flex-nowrap">
+              <div
+                className="d-flex align-items-center gap-2 flex-wrap"
+                style={{
+                  justifyContent: "flex-start",
+                  flexDirection: "row",
+                }}
+              >
                 <button
                   type="button"
                   className="btn btn-outline-secondary py-1 px-2"
@@ -161,12 +167,14 @@ const Cart = () => {
                 >
                   -
                 </button>
+
                 <div
                   className="form-control text-center px-2"
-                  style={{ width: "3rem", fontSize: "0.9rem" }}
+                  style={{ width: "2rem", fontSize: "0.9rem" }}
                 >
                   {item.product_quantity}
                 </div>
+
                 <button
                   type="button"
                   className="btn btn-outline-secondary py-1 px-2"
@@ -175,7 +183,22 @@ const Cart = () => {
                   +
                 </button>
               </div>
+
+              {/* Responsive fix with media query */}
+              <style>{`
+    @media (max-width: 576px) {
+      td .d-flex {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+
+      td .form-control {
+        margin: 4px 0;
+      }
+    }
+  `}</style>
             </td>
+
             <td width="15%" className="text-center">
               <h6>
                 ${(item.product_price * item.product_quantity).toFixed(2)}
