@@ -210,7 +210,10 @@ const Checkout = () => {
           <td>{item.product_name}</td>
           <td>${item.product_price}</td>
           <td>
-            <p>{item.product_quantity} unit(s)</p>
+            <div className="d-flex align-items-center gap-1">
+              <p className="mb-0">{item.product_quantity}</p>
+              <span className="mb-0">unit(s)</span>
+            </div>
           </td>
         </tr>
       );

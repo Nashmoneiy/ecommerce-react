@@ -72,22 +72,23 @@ const Home = () => {
             {/* Text content */}
             <div className="col-md-6 border-2">
               <div
-                className="p-4 rounded animate-fadeInDown"
+                className="p-3 rounded animate-fadeInDown"
                 style={{
-                  backgroundColor: "rgba(232, 228, 228, 0.73)", // semi-transparent black
+                  backgroundColor: "rgba(232, 228, 228, 0.73)",
                   color: "white",
+                  maxHeight: "420px",
+                  overflow: "hidden",
                 }}
               >
-                <h5 className="text-secondary">What we offer</h5>
-                <p className="custom-paragraph">
+                <h5 className="text-secondary mb-2">What we offer</h5>
+                <p className="custom-paragraph mb-2">
                   It is a long established fact that a reader will be distracted
                   by the readable content of a page when looking at its layout.
                   The point of using Lorem Ipsum is that it has a more or less
                   normal distribution of letters, as opposed to using 'Content
                   here, content here', making it look like readable English.
                 </p>
-
-                <Link to="/collections" className="btn btn-success w-50 mt-3">
+                <Link to="/collections" className="btn btn-success w-50 mt-2">
                   View collections
                 </Link>
               </div>
