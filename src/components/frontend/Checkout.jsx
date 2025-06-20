@@ -258,19 +258,35 @@ const Checkout = () => {
         </table>
       </div>
 
-      <div className="py-4">
+      <div
+        className="py-4"
+        style={{ background: "linear-gradient(to right, #e3f2fd, #fff)" }}
+      >
         <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="card">
-                <div className="card-header">
-                  <h6>Basic information</h6>
+          <div className="row justify-content-center">
+            <div className="col-md-10">
+              <div
+                className="card shadow animate-slideUp"
+                style={{
+                  border: "none",
+                  borderRadius: "1rem",
+                  overflow: "hidden",
+                }}
+              >
+                <div className="card-header bg-dark text-white">
+                  <h6 className="mb-0">Info</h6>
                 </div>
-                <div className="card-body " style={{ backgroundColor: "#eee" }}>
+                <div
+                  className="card-body"
+                  style={{
+                    backgroundColor: "rgba(255, 255, 255, 0.95)",
+                  }}
+                >
                   <div className="row">
+                    {/* Form fields (unchanged except minor tweaks) */}
                     <div className="col-md-6">
                       <div className="form-group mb-3">
-                        <label htmlFor="">Firstname</label>
+                        <label>Firstname</label>
                         <input
                           type="text"
                           name="firstname"
@@ -285,7 +301,7 @@ const Checkout = () => {
                     </div>
                     <div className="col-md-6">
                       <div className="form-group mb-3">
-                        <label htmlFor="">Surname</label>
+                        <label>Surname</label>
                         <input
                           type="text"
                           name="surname"
@@ -300,7 +316,7 @@ const Checkout = () => {
                     </div>
                     <div className="col-md-6">
                       <div className="form-group mb-3">
-                        <label htmlFor="">Email</label>
+                        <label>Email</label>
                         <input
                           type="text"
                           name="email"
@@ -315,7 +331,7 @@ const Checkout = () => {
                     </div>
                     <div className="col-md-6">
                       <div className="form-group mb-3">
-                        <label htmlFor="">Phone</label>
+                        <label>Phone</label>
                         <input
                           type="text"
                           name="phone"
@@ -330,7 +346,7 @@ const Checkout = () => {
                     </div>
                     <div className="col-md-6">
                       <div className="form-group mb-3">
-                        <label htmlFor="">Street</label>
+                        <label>Street</label>
                         <input
                           type="text"
                           name="street"
@@ -345,7 +361,7 @@ const Checkout = () => {
                     </div>
                     <div className="col-md-6">
                       <div className="form-group mb-3">
-                        <label htmlFor="">District (optional)</label>
+                        <label>District (optional)</label>
                         <input
                           type="text"
                           name="district"
@@ -360,7 +376,7 @@ const Checkout = () => {
                     </div>
                     <div className="col-md-6">
                       <div className="form-group mb-3">
-                        <label htmlFor="">City</label>
+                        <label>City</label>
                         <input
                           type="text"
                           name="city"
@@ -375,7 +391,7 @@ const Checkout = () => {
                     </div>
                     <div className="col-md-6">
                       <div className="form-group mb-3">
-                        <label htmlFor="">State</label>
+                        <label>State</label>
                         <input
                           type="text"
                           name="state"
