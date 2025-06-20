@@ -197,7 +197,7 @@ const Checkout = () => {
       let formattedPrice = totalPrice.toFixed(2);
       return (
         <tr key={item.id}>
-          <td width="30%">
+          <td width="40%">
             <img
               src={`https://laravel-api-production-1d4a.up.railway.app/${item.product_image.replace(
                 /^\/+/,
@@ -209,7 +209,9 @@ const Checkout = () => {
           </td>
           <td>{item.product_name}</td>
           <td>${item.product_price}</td>
-          <td>{item.product_quantity} unit(s)</td>
+          <td>
+            <p>{item.product_quantity} unit(s)</p>
+          </td>
         </tr>
       );
     });

@@ -174,10 +174,8 @@ const Cart = () => {
                 </button>
               </div>
             </td>
-            <td width="15%" className="text-center">
-              <h6>
-                ${(item.product_price * item.product_quantity).toFixed(2)}
-              </h6>
+            <td width="10%" className="text-center">
+              <p>${(item.product_price * item.product_quantity).toFixed(2)}</p>
             </td>
             <td width="8%" className="text-center">
               <button
