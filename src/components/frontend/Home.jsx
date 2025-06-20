@@ -79,7 +79,7 @@ const Home = () => {
                 }}
               >
                 <h5 className="text-secondary">What we offer</h5>
-                <p className="col-12 p-1  offer" style={{ color: "black" }}>
+                <p className="custom-paragraph">
                   It is a long established fact that a reader will be distracted
                   by the readable content of a page when looking at its layout.
                   The point of using Lorem Ipsum is that it has a more or less
