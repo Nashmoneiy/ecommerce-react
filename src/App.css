@@ -13,6 +13,9 @@ body {
      
 
     }
+      .nav-link {
+    color: white !important;
+  }
 
     .logout-btn{
         background: none;

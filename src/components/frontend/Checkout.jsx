@@ -38,6 +38,7 @@ const Checkout = () => {
   };
 
   useEffect(() => {
+    document.title = "Checkout";
     const token = localStorage.getItem("auth_token");
     if (token) {
       AxiosInstance.get("/api/cart")

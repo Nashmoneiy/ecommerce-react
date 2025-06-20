@@ -11,6 +11,7 @@ const Home = () => {
             <div className="col-md-12 text-center animate-fadeInDown">
               <h3 className="main-heading">Our company</h3>
               <div className="underline mx-auto"></div>
+
               <p className="">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
@@ -19,8 +20,18 @@ const Home = () => {
                 survived not only five centuries, but also the leap into
                 electronic typesetting, remaining essentially unchanged.
               </p>
-              <Link to="/about" className="btn btn-warning">
-                Read more
+              <img
+                src="/undraw_order-confirmed_m9e9.svg"
+                alt="Order Confirmed"
+                className="img-fluid mb-4 animated-illustration"
+                style={{ maxWidth: "300px", width: "100%", height: "auto" }}
+              />
+
+              <Link
+                to="/about"
+                className="btn btn-warning d-inline-flex align-items-center gap-2"
+              >
+                Read more <i className="bi bi-arrow-down"></i>
               </Link>
             </div>
           </div>
@@ -62,14 +73,12 @@ const Home = () => {
               <div
                 className="p-4 rounded animate-fadeInDown"
                 style={{
-                  backgroundColor: "rgba(0, 0, 0, 0.5)", // semi-transparent black
+                  backgroundColor: "rgba(232, 228, 228, 0.73)", // semi-transparent black
                   color: "white",
                 }}
               >
-                <h5 className="" style={{ color: "black" }}>
-                  What we offer
-                </h5>
-                <p className="col-12 p-1  offer">
+                <h5 className="text-secondary">What we offer</h5>
+                <p className="col-12 p-1  offer" style={{ color: "black" }}>
                   It is a long established fact that a reader will be distracted
                   by the readable content of a page when looking at its layout.
                   The point of using Lorem Ipsum is that it has a more or less

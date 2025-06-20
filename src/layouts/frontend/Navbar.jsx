@@ -48,7 +48,7 @@ function Navbar() {
   const authButtons = localStorage.getItem("auth_token") ? (
     <ul className="navbar-nav">
       <li className="nav-item">
-        <button className="logout-btn" onClick={logoutSubmit}>
+        <button className="logout-btn nav-link" onClick={logoutSubmit}>
           Logout
         </button>
       </li>
@@ -59,7 +59,6 @@ function Navbar() {
         <Link
           to="/login"
           className="nav-link active"
-          style={{ color: "lightblue" }}
           onClick={handleNavLinkClick}
         >
           Login
@@ -69,7 +68,6 @@ function Navbar() {
         <Link
           to="/register"
           className="nav-link active"
-          style={{ color: "lightblue" }}
           onClick={handleNavLinkClick}
         >
           Register
@@ -82,9 +80,8 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg bg-dark fixed-top" ref={navbarRef}>
       <div className="container">
         <Link
-          className="navbar-brand"
+          className="navbar-brand text-white"
           to="/"
-          style={{ color: "white" }}
           onClick={handleNavLinkClick}
         >
           Eucia
@@ -92,7 +89,7 @@ function Navbar() {
 
         <div className="d-flex align-items-center ms-auto order-lg-1">
           <button
-            className="navbar-toggler me-2 ms-auto"
+            className="navbar-toggler me-2 mt-2 ms-auto"
             type="button"
             aria-expanded={!isCollapsed}
             onClick={toggleNavbar}
@@ -139,7 +136,6 @@ function Navbar() {
               <Link
                 to="/"
                 className="nav-link active"
-                style={{ color: "lightblue" }}
                 onClick={handleNavLinkClick}
               >
                 Home
@@ -149,7 +145,6 @@ function Navbar() {
               <Link
                 to="/collections"
                 className="nav-link active"
-                style={{ color: "lightblue" }}
                 onClick={handleNavLinkClick}
               >
                 Collections
@@ -159,6 +154,23 @@ function Navbar() {
           </ul>
         </div>
       </div>
+
+      {/* Style: Responsive nav-item font size */}
+      <style>{`
+        .nav-item {
+          font-size: 0.99rem;
+        }
+
+        @media (max-width: 576px) {
+          .nav-item {
+            font-size: 0.96rem;
+          }
+
+          .nav-link i {
+            font-size: 1rem;
+          }
+        }
+      `}</style>
     </nav>
   );
 }

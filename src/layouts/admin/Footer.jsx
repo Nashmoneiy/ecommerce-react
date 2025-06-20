@@ -6,26 +6,26 @@ const Footer = () => {
       <div className="container">
         <div className="row align-items-center text-center text-md-start">
           <div className="col-md-6 mb-3 mb-md-0">
-            <p className="mb-0">
+            <p className="mb-0 footer-text">
               &copy; {new Date().getFullYear()} Eucia. All rights reserved.
             </p>
           </div>
-          <div className="col-md-6 d-flex justify-content-center justify-content-md-end flex-wrap gap-3">
+          <div className="col-md-6 d-flex justify-content-center justify-content-md-end flex-wrap">
             <a
               href="#"
-              className="text-white text-decoration-none small footer-link"
+              className="text-white text-decoration-none footer-link footer-text me-4 me-md-3"
             >
               Privacy Policy
             </a>
             <a
               href="#"
-              className="text-white text-decoration-none small footer-link"
+              className="text-white text-decoration-none footer-link footer-text me-4 me-md-3"
             >
               Terms &amp; Conditions
             </a>
             <a
               href="#"
-              className="text-white text-decoration-none small footer-link"
+              className="text-white text-decoration-none footer-link footer-text"
             >
               Contact Us
             </a>
@@ -33,8 +33,23 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Optional styling for hover effect */}
       <style>{`
+        .footer-text {
+          font-size: 0.73rem;
+        }
+
+        @media (min-width: 576px) {
+          .footer-text {
+            font-size: 0.864rem;
+          }
+        }
+
+        @media (min-width: 768px) {
+          .footer-text {
+            font-size: 0.7rem;
+          }
+        }
+
         .footer-link:hover {
           text-decoration: underline;
           color: #f8f9fa;
