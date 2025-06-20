@@ -152,53 +152,28 @@ const Cart = () => {
             <td width="10%" className="text-center">
               <h6>${item.product_price}</h6>
             </td>
-            <td>
-              <div
-                className="d-flex align-items-center gap-2 flex-wrap"
-                style={{
-                  justifyContent: "flex-start",
-                  flexDirection: "row",
-                }}
-              >
+            <td width="5%">
+              <div className="input-group">
                 <button
                   type="button"
-                  className="btn btn-outline-secondary py-1 px-2"
+                  className="input-group-text bg-shadow border-1"
                   onClick={() => handleDecreament(item.id)}
                 >
                   -
                 </button>
 
-                <div
-                  className="form-control text-center px-2"
-                  style={{ width: "2rem", fontSize: "0.9rem" }}
-                >
+                <div className="form-control text-center quantity">
                   {item.product_quantity}
                 </div>
-
                 <button
                   type="button"
-                  className="btn btn-outline-secondary py-1 px-2"
+                  className="input-group-text bg-shadow border-1"
                   onClick={() => handleIncreament(item.id)}
                 >
                   +
                 </button>
               </div>
-
-              {/* Responsive fix with media query */}
-              <style>{`
-    @media (max-width: 576px) {
-      td .d-flex {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-      }
-
-      td .form-control {
-        margin: 4px 0;
-      }
-    }
-  `}</style>
             </td>
-
             <td width="15%" className="text-center">
               <h6>
                 ${(item.product_price * item.product_quantity).toFixed(2)}
@@ -211,6 +186,23 @@ const Cart = () => {
               >
                 remove
               </button>
+
+              <style>{`
+  .remove-cart {
+    font-weight: 600; /* Default weight */
+    border: none;
+    background: none;
+    color: #dc3545; /* Bootstrap danger color */
+    cursor: pointer;
+  }
+
+  @media (max-width: 576px) {
+    .remove-cart {
+      font-weight: 400 !important; /* Lighter on small screens */
+      font-size: 0.85rem;
+    }
+  }
+`}</style>
             </td>
           </tr>
         );
