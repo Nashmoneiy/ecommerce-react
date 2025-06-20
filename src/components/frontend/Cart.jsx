@@ -1,9 +1,6 @@
-import React from "react";
-import { useEffect, useState } from "react";
-
+import React, { useEffect, useState } from "react";
 import alertify from "alertifyjs";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../../CartContext";
 import AxiosInstance from "../../AxiosInstance";
 
@@ -12,49 +9,45 @@ const Cart = () => {
   const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
-  var totalPrice = 0;
+  let totalPrice = 0;
 
   useEffect(() => {
+    document.title = "Cart";
     const token = localStorage.getItem("auth_token");
+
     if (token) {
       AxiosInstance.get("/api/cart")
         .then((response) => {
           if (response.status === 200) {
             setCartItems(response.data.data);
             setLoading(false);
-            console.log(cartItems);
           }
         })
-        .catch((error) => {
-          if (error.status === 404) {
-            // console.log(error);
-          }
-        });
+        .catch((error) => {});
     } else {
       const localCart = localStorage.getItem("cart");
       if (localCart) {
         try {
           setCartItems(JSON.parse(localCart));
           setLoading(false);
-        } catch (err) {
-          //  console.error("Error parsing local cart:", err);
-        }
+        } catch (err) {}
       }
     }
   }, []);
+
   const handleDecreament = (cart_id) => {
     setCartItems((prevItems) =>
-      prevItems.map((item) => {
-        if (item.id === cart_id) {
-          const newQty =
-            item.product_quantity > 1 ? item.product_quantity - 1 : 1;
-          return { ...item, product_quantity: newQty };
-        }
-        return item;
-      })
+      prevItems.map((item) =>
+        item.id === cart_id
+          ? {
+              ...item,
+              product_quantity:
+                item.product_quantity > 1 ? item.product_quantity - 1 : 1,
+            }
+          : item
+      )
     );
 
-    // Only call update if quantity is greater than 1
     const item = cartItems.find((item) => item.id === cart_id);
     if (item?.product_quantity > 1) {
       updateCartQuantity(cart_id, "dec");
@@ -71,14 +64,14 @@ const Cart = () => {
     );
     updateCartQuantity(cart_id, "inc");
   };
+
   const token = localStorage.getItem("auth_token");
+
   const updateCartQuantity = (cart_id, scope) => {
     if (token) {
-      AxiosInstance.put(`/api/update-cart/${cart_id}/${scope}`)
-        .then((response) => {})
-        .catch((error) => {
-          console.log(error);
-        });
+      AxiosInstance.put(`/api/update-cart/${cart_id}/${scope}`).catch((err) =>
+        console.log(err)
+      );
     } else {
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -96,14 +89,14 @@ const Cart = () => {
       });
 
       localStorage.setItem("cart", JSON.stringify(updatedCart));
-      setCartItems(updatedCart); // to reflect the changes in the UI
+      setCartItems(updatedCart);
     }
   };
 
   const deleteCartItem = (e, cart_id) => {
     e.preventDefault();
     const thisclicked = e.currentTarget;
-    // thisclicked.innerText = "removing";
+
     if (token) {
       AxiosInstance.delete(`/api/delete-cart/${cart_id}`)
         .then((response) => {
@@ -114,36 +107,36 @@ const Cart = () => {
             navigate(0);
           }
         })
-        .catch((error) => {
-          console.log(error);
-        });
+        .catch((error) => console.log(error));
     } else {
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
       const updatedCart = cart.filter((item) => item.id !== cart_id);
       localStorage.setItem("cart", JSON.stringify(updatedCart));
-      setCartItems(updatedCart); // triggers UI update
+      setCartItems(updatedCart);
       alertify.set("notifier", "position", "top-right");
       alertify.success("Item removed from cart");
       navigate(0);
     }
   };
 
-  var cartDetails = [];
+  let cartDetails = [];
+
   if (loading) {
     return <p className="m-3">Loading cart details...</p>;
   } else {
     if (cartItems.length > 0) {
       cartDetails = cartItems.map((item, id) => {
         totalPrice += item.product_price * item.product_quantity;
-        let formattedPrice = totalPrice.toFixed(2);
+
         return (
           <tr key={id}>
-            <td width="10%" className="text-center ">
+            <td width="10%" className="text-center">
               <img
                 src={`https://laravel-api-production-1d4a.up.railway.app/${item.product_image}`}
                 width="80px"
                 height="55px"
                 className="border-3"
+                alt={item.product_name}
               />
             </td>
             <td width="10%" className="text-center">
@@ -153,24 +146,28 @@ const Cart = () => {
               <h6>${item.product_price}</h6>
             </td>
             <td width="5%">
-              <div className="input-group">
+              <div className="d-flex flex-column align-items-center gap-1 responsive-quantity">
                 <button
                   type="button"
-                  className="input-group-text bg-shadow border-2"
-                  onClick={() => handleDecreament(item.id)}
-                >
-                  -
-                </button>
-
-                <div className="form-control text-center quantity">
-                  {item.product_quantity}
-                </div>
-                <button
-                  type="button"
-                  className="input-group-text bg-shadow border-2"
+                  className="btn btn-outline-secondary py-1 px-2"
                   onClick={() => handleIncreament(item.id)}
                 >
                   +
+                </button>
+
+                <div
+                  className="form-control text-center p-1"
+                  style={{ width: "2.5rem", fontSize: "0.9rem" }}
+                >
+                  {item.product_quantity}
+                </div>
+
+                <button
+                  type="button"
+                  className="btn btn-outline-secondary py-1 px-2"
+                  onClick={() => handleDecreament(item.id)}
+                >
+                  -
                 </button>
               </div>
             </td>
@@ -181,10 +178,10 @@ const Cart = () => {
             </td>
             <td width="8%" className="text-center">
               <button
-                className="remove-cart"
+                className="remove-cart btn btn-sm btn-danger"
                 onClick={(e) => deleteCartItem(e, item.id)}
               >
-                remove
+                Remove
               </button>
             </td>
           </tr>
@@ -193,11 +190,12 @@ const Cart = () => {
     } else {
       cartDetails = (
         <div>
-          <span>your cart is empty</span>
+          <span>Your cart is empty</span>
         </div>
       );
     }
   }
+
   const formattedPrice = totalPrice.toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
@@ -216,15 +214,15 @@ const Cart = () => {
         <div className="card">
           <div className="card-body">
             <div className="table-responsive">
-              <table className="table  table-striped">
+              <table className="table table-striped">
                 <thead>
                   <tr>
                     <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
 
@@ -250,6 +248,29 @@ const Cart = () => {
           </div>
         </div>
       </div>
+
+      {/* Responsive Styles */}
+      <style>{`
+        .responsive-quantity {
+          min-height: 120px;
+        }
+
+        @media (max-width: 576px) {
+          .responsive-quantity button,
+          .responsive-quantity .form-control {
+            width: 2.2rem;
+            font-size: 0.8rem;
+          }
+
+          .responsive-quantity {
+            gap: 0.3rem;
+          }
+
+          table thead {
+            font-size: 0.85rem;
+          }
+        }
+      `}</style>
     </div>
   );
 };
