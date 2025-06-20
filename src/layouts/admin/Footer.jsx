@@ -35,18 +35,18 @@ const Footer = () => {
 
       <style>{`
         .footer-text {
-          font-size: 0.73rem;
+          font-size: 0.70rem;
         }
 
         @media (min-width: 576px) {
           .footer-text {
-            font-size: 0.864rem;
+            font-size: 0.860rem;
           }
         }
 
         @media (min-width: 768px) {
           .footer-text {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
           }
         }
 

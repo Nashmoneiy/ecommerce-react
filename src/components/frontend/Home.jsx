@@ -12,7 +12,7 @@ const Home = () => {
               <h3 className="main-heading">Our company</h3>
               <div className="underline mx-auto"></div>
 
-              <p className="">
+              <p className="custom-paragraph">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -20,6 +20,7 @@ const Home = () => {
                 survived not only five centuries, but also the leap into
                 electronic typesetting, remaining essentially unchanged.
               </p>
+
               <img
                 src="/undraw_order-confirmed_m9e9.svg"
                 alt="Order Confirmed"
@@ -94,6 +95,23 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <style>{`
+  .custom-paragraph {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:rgba(232, 228, 228, 0.73); /* light gray */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  @media (max-width: 576px) {
+    .custom-paragraph {
+      font-size: 0.9rem;
+    }
+  }
+`}</style>
     </div>
   );
 };
