@@ -41,10 +41,7 @@ function Register() {
     };
 
     axios
-      .post(
-        `https://laravel-api-production-1d4a.up.railway.app/api/register`,
-        data
-      )
+      .post(`laravel-api-production-6ecd.up.railway.app/api/register`, data)
       .then((res) => {
         swal("Success", res.data.message, "success");
         navigate("/");

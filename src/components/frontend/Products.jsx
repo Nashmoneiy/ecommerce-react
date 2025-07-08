@@ -22,8 +22,8 @@ const Products = () => {
 
   if (loading) {
     return (
-      <div className="text-center py-5">
-        <h5>Loading products...</h5>
+      <div className="">
+        <p>Loading products...</p>
       </div>
     );
   }
@@ -36,7 +36,7 @@ const Products = () => {
         <div className="card">
           <Link to={`/collections/${item.categories.slug}/${item.slug}`}>
             <img
-              src={`https://laravel-api-production-1d4a.up.railway.app/${item.image}`}
+              src={`http://127.0.0.1:8000/${item.image}`}
               className="card-img-top"
               alt={item.name}
               style={{ height: "180px", objectFit: "contain" }}
@@ -60,7 +60,7 @@ const Products = () => {
       <div className="container">
         <div className="card">
           <div className="card-body">
-            <h5>No product available for this category</h5>
+            <p>No product available for this category</p>
           </div>
         </div>
       </div>

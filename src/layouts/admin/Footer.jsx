@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white py-4 mt-auto">
+    <footer className="bg-dark text-white py-5 mt-auto">
       <div className="container">
         <div className="row align-items-center text-center text-md-start">
           <div className="col-md-6 mb-3 mb-md-0">
@@ -35,18 +35,18 @@ const Footer = () => {
 
       <style>{`
         .footer-text {
-          font-size: 0.70rem;
+          font-size: 0.90rem;
         }
 
         @media (min-width: 576px) {
           .footer-text {
-            font-size: 0.860rem;
+            font-size: 0.97rem;
           }
         }
 
         @media (min-width: 768px) {
           .footer-text {
-            font-size: 0.6rem;
+            font-size: 0.9rem;
           }
         }
 

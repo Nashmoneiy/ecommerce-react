@@ -176,7 +176,7 @@ const Productdetail = () => {
           <div className="row" key={product.id}>
             <div className="col-md-4 border-end">
               <img
-                src={`https://laravel-api-production-1d4a.up.railway.app/${product.image}`}
+                src={`laravel-api-production-6ecd.up.railway.app/${product.image}`}
                 className="w-100"
                 alt={product.name}
               />

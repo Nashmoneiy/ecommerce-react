@@ -155,6 +155,40 @@ body {
   animation: slideUp 0.7s ease-out;
 }
 
+.promo-img {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.promo-img:hover {
+  transform: scale(1.05);
+}
+
+.d-flex::-webkit-scrollbar {
+  display: none;
+}
+
+.d-flex {
+  scrollbar-width: none;
+}
+@media (min-width: 768px) { /* md and up */
+  .promo-img {
+    width: 200px;
+  }
+}
+
+@media (min-width: 992px) { /* lg and up, optional */
+  .promo-img {
+    width: 200px;
+  }
+}
+
+
+
+
 
 
 

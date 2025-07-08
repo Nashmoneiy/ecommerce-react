@@ -38,10 +38,7 @@ function Login() {
     };
 
     axios
-      .post(
-        `https://laravel-api-production-1d4a.up.railway.app/api/login`,
-        data
-      )
+      .post(`laravel-api-production-6ecd.up.railway.app/api/login`, data)
       .then((res) => {
         if (res.data.status === 200) {
           localStorage.setItem("auth_token", res.data.token);

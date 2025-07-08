@@ -184,7 +184,7 @@ const Checkout = () => {
                     Loading...
                   </>
                 ) : (
-                  "Procedd to pay"
+                  "Proceed to pay"
                 )}
               </button>
             </div>
@@ -199,7 +199,7 @@ const Checkout = () => {
         <tr key={item.id}>
           <td width="40%">
             <img
-              src={`https://laravel-api-production-1d4a.up.railway.app/${item.product_image.replace(
+              src={`laravel-api-production-6ecd.up.railway.app/${item.product_image.replace(
                 /^\/+/,
                 ""
               )}`}
