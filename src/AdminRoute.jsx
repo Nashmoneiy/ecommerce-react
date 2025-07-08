@@ -11,7 +11,7 @@ const AdminRoute = ({ children }) => {
 
       try {
         const response = await axios.get(
-          "laravel-api-production-6ecd.up.railway.app/api/auth",
+          "https://laravel-api-production-6ecd.up.railway.app/api/auth",
           {
             headers: {
               Authorization: `Bearer ${token}`,

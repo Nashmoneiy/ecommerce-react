@@ -199,7 +199,7 @@ const Checkout = () => {
         <tr key={item.id}>
           <td width="40%">
             <img
-              src={`laravel-api-production-6ecd.up.railway.app/${item.product_image.replace(
+              src={`https://laravel-api-production-6ecd.up.railway.app/${item.product_image.replace(
                 /^\/+/,
                 ""
               )}`}

@@ -36,7 +36,7 @@ const Products = () => {
         <div className="card">
           <Link to={`/collections/${item.categories.slug}/${item.slug}`}>
             <img
-              src={`http://127.0.0.1:8000/${item.image}`}
+              src={`https://laravel-api-production-6ecd.up.railway.app/${item.image}`}
               className="card-img-top"
               alt={item.name}
               style={{ height: "180px", objectFit: "contain" }}
